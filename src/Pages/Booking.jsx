@@ -17,7 +17,7 @@ export default function Booking() {
 
   return (
     <section
-      className="relative bg-cover bg-center py-12 px-6 flex justify-center items-center"
+      className="relative bg-cover bg-center py-12 px-2 flex justify-center items-center"
       style={{ backgroundImage: "url('https://restro-lake.vercel.app/static/media/bg5.4415973cd4bdf20f31fc.jpg')" }}
     >
       <div className="max-w-xl mx-auto rounded-xl p-6 md:p-10 shadow-xl border border-gray-500">
