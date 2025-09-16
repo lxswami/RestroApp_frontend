@@ -17,10 +17,10 @@ export default function Booking() {
 
   return (
     <section
-      className="relative bg-cover bg-center py-12 px-4 flex justify-center items-center"
+      className="relative bg-cover bg-center py-12 px-6 flex justify-center items-center"
       style={{ backgroundImage: "url('https://restro-lake.vercel.app/static/media/bg5.4415973cd4bdf20f31fc.jpg')" }}
     >
-      <div className="max-w-lg mx-auto rounded-xl p-6 md:p-10 shadow-xl border border-gray-500">
+      <div className="max-w-xl mx-auto rounded-xl p-6 md:p-10 shadow-xl border border-gray-500">
         <h2 className="text-3xl font-bold text-center text-white mb-6">Booking</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
