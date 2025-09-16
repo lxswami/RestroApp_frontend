@@ -47,7 +47,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom columns */}
-            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-16 text-center md:text-left">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-4 text-center md:text-left">
                 {/* Contact Location */}
                 <div>
                     <h3 className="font-semibold text-lg mb-3 border-b border-gray-600 inline-block pb-1">
@@ -58,7 +58,7 @@ export default function Footer() {
                         Email:{" "}
                         <a
                             href="mailto:99294799lx@gmail.com"
-                            className="hover:text-white underline"
+                            className="hover:text-white"
                         >
                             99294799lx@gmail.com
                         </a>
@@ -67,7 +67,7 @@ export default function Footer() {
                         Phone:{" "}
                         <a
                             href="tel:1234567890"
-                            className="hover:text-white underline"
+                            className="hover:text-white"
                         >
                             (+91) 9929479949
                         </a>
