@@ -56,7 +56,7 @@ export default function Header() {
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
-              className="px-3 py-1 border rounded-md border-gray-600 hover:bg-gray-700 text-red-500 hover:border-red-600 font-bold transition cursor-pointer"
+              className="px-3 py-1 border rounded-md border-gray-600 hover:bg-gray-800 text-red-500 hover:border-red-600 font-bold transition cursor-pointer"
             >
               Logout
             </button>
@@ -64,7 +64,7 @@ export default function Header() {
             <Link
               to="/login"
               onClick={() => setIsOpen(false)}
-              className="px-3 py-1 border rounded-md border-gray-600 hover:bg-gray-700 text-green-500 hover:border-green-600 font-bold transition cursor-pointer"
+              className="px-3 py-1 border rounded-md border-gray-600 hover:bg-gray-800 text-green-500 hover:border-green-600 font-bold transition cursor-pointer"
             >
               Login
             </Link>
