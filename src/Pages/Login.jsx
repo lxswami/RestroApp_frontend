@@ -39,12 +39,12 @@ export default function Login() {
         <h2 className="text-2xl font-bold mb-2 text-center">Login To Your Account</h2>
         <p className="text-center mb-6 text-gray-300">
           Don't have an account yet?{" "}
-          <Link to="/registeration" className="underline cursor-pointer">Signup</Link>
+          <Link to="/registeration" className="underline cursor-pointer text-blue-700">Signup</Link>
         </p>
         <form onSubmit={handleSubmit}>
           <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full mb-4 px-4 py-2 rounded bg-gray-700 placeholder-gray-400 focus:outline-none" required />
           <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full mb-4 px-4 py-2 rounded bg-gray-700 placeholder-gray-400 focus:outline-none" required />
-          <button type="submit" className="w-full bg-white text-black font-semibold py-2 rounded hover:bg-gray-200">Login</button>
+          <button type="submit" className="w-full bg-white text-black font-semibold py-2 rounded hover:bg-gray-200 cursor-pointer">Login</button>
         </form>
       </div>
     </div>

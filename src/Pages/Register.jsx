@@ -55,7 +55,7 @@ export default function Register() {
                 <h2 className="text-2xl font-bold mb-2 text-center">Create Your Account</h2>
                 <p className="text-center mb-6 text-gray-300">
                     Already have an account?{" "}
-                    <Link to="/login" className="underline cursor-pointer">Login</Link>
+                    <Link to="/login" className="underline cursor-pointer text-blue-700">Login</Link>
                 </p>
                 <form onSubmit={handleSubmit}>
                     <input
@@ -84,7 +84,7 @@ export default function Register() {
                     />
                     <button
                         type="submit"
-                        className="w-full bg-white text-black font-semibold py-2 rounded hover:bg-gray-200"
+                        className="w-full bg-white text-black font-semibold py-2 rounded hover:bg-gray-200 cursor-pointer"
                     >
                         Register
                     </button>
