@@ -35,7 +35,7 @@ export default function Login() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://restro-lake.vercel.app/static/media/bg5.4415973cd4bdf20f31fc.jpg')" }}>
-      <div className="bg-black/50 px-8 py-20 rounded-[5px] max-w-sm w-full text-white border border-gray-500 mt-[100px]">
+      <div className="bg-black/50 px-8 py-20 rounded-[5px] max-w-sm w-full text-white border border-gray-500">
         <h2 className="text-2xl font-bold mb-2 text-center">Login To Your Account</h2>
         <p className="text-center mb-6 text-gray-300">
           Don't have an account yet?{" "}
