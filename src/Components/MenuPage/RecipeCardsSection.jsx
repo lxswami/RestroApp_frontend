@@ -4,7 +4,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { baseurl } from "../../Utils/helper";
 
-
 export default function RecipeCardsSection({ activeTab }) {
   const [allRecipes, setAllRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -37,41 +36,51 @@ export default function RecipeCardsSection({ activeTab }) {
       );
       alert("Are you sure you want to delete this recipe?");
       toast.success("Recipe deleted!");
-      setAllRecipes((prev) => prev.filter(item => (item.id || item._id) !== recipeId));
+      setAllRecipes((prev) =>
+        prev.filter((item) => (item.id || item._id) !== recipeId)
+      );
     } catch (error) {
       console.error("Delete failed:", error);
       toast.error("Failed to delete recipe!");
     }
   };
 
-  // ✅ Filter recipes: show all if activeTab is "All", else filter by category
+  // ✅ Filter recipes
   const filteredRecipes =
     activeTab === "All"
       ? allRecipes
-      : allRecipes.filter(recipe => recipe.category === activeTab);
+      : allRecipes.filter((recipe) => recipe.category === activeTab);
 
   return (
     <div className="relative max-w-[1420px] mx-auto px-4 mt-10 rounded-xl overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-700 hover:scale-100"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1074&auto=format&fit=crop')" }}
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1074&auto=format&fit=crop')",
+        }}
       ></div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/80"></div>
 
       <div className="relative z-10 p-6 md:p-8">
-        <div className="flex justify-end mb-6">
-          <Link
-            to="/receipeadd"
-            className="bg-gray-500 hover:bg-gray-600 cursor-pointer text-[12px] font-semibold text-white py-2 px-5 rounded-lg shadow-lg transition transform hover:-translate-y-1 hover:scale-105"
-          >
-            Add New Recipe
-          </Link>
-        </div>
+        {/* ✅ Show Add Recipe button only when no recipes */}
+        {filteredRecipes.length === 0 && (
+          <div className="flex justify-end mb-6">
+            <Link
+              to="/receipeadd"
+              className="bg-gray-500 hover:bg-gray-600 cursor-pointer text-[12px] font-semibold text-white py-2 px-5 rounded-lg shadow-lg transition transform hover:-translate-y-1 hover:scale-105"
+            >
+              Add New Recipe
+            </Link>
+          </div>
+        )}
 
         {loading ? (
           <p className="text-white text-center">Loading recipes...</p>
         ) : filteredRecipes.length === 0 ? (
-          <p className="text-white text-center">No recipes found in this category.</p>
+          <p className="text-white text-center">
+            No recipes found in this category.
+          </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {filteredRecipes.map((item, index) => (
@@ -90,25 +99,37 @@ export default function RecipeCardsSection({ activeTab }) {
 
                 <div className="p-4 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-white text-lg font-bold mb-1 hover:text-yellow-400 transition-colors duration-300">{item.title}</h3>
+                    <h3 className="text-white text-lg font-bold mb-1 hover:text-yellow-400 transition-colors duration-300">
+                      {item.title}
+                    </h3>
                     <p className="text-gray-300 text-lg">
-                      <span className="text-xl text-green-600 font-bold"> ₹ </span>{item.price}
+                      <span className="text-xl text-green-600 font-bold"> ₹ </span>
+                      {item.price}
                     </p>
-
                   </div>
+
                   <div className="mt-4 flex gap-2">
-                    <Link
-                      to={`/receipeedit/${item.id || item._id}`}
-                      className="flex-1 bg-yellow-600 hover:bg-yellow-700 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
-                    >
-                      Edit
-                    </Link>
-                    <button
-                      onClick={() => deleteRecipe(item.id || item._id)}
-                      className="flex-1 bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
-                    >
-                      Delete
-                    </button>
+                    {/* ✅ Show Add to Cart if recipes exist, else Edit/Delete */}
+                    {filteredRecipes.length > 0 ? (
+                      <button className="flex-1 bg-green-600 hover:bg-green-700 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+                        Add to Cart
+                      </button>
+                    ) : (
+                      <>
+                        <Link
+                          to={`/receipeedit/${item.id || item._id}`}
+                          className="flex-1 bg-yellow-600 hover:bg-yellow-700 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+                        >
+                          Edit
+                        </Link>
+                        <button
+                          onClick={() => deleteRecipe(item.id || item._id)}
+                          className="flex-1 bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+                        >
+                          Delete
+                        </button>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -117,6 +138,5 @@ export default function RecipeCardsSection({ activeTab }) {
         )}
       </div>
     </div>
-
   );
 }
