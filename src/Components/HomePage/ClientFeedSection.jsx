@@ -41,18 +41,28 @@ export default function TestimonialsSlider() {
             className="bg-cover bg-center text-center text-white py-10 px-4 flex flex-col gap-5 justify-center items-center"
             style={{
                 backgroundImage:
-                    "url('https://restro-lake.vercel.app/static/media/bg.c03a5ea7166572935666.png')"
+                    "url('https://restro-lake.vercel.app/static/media/bg.c03a5ea7166572935666.png')",
             }}
         >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 italic" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+            <h2
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 italic"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+            >
                 What Client's Say
             </h2>
-            <p className="mb-6 text-gray-300 text-sm sm:text-base md:text-lg" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+            <p
+                className="mb-4 sm:mb-6 text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+            >
                 1500+ Satisfied Clients
             </p>
 
             <div
-                className="w-full max-w-xl sm:max-w-2xl mx-auto"
+                className="w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto"
                 data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="1500"
@@ -61,16 +71,20 @@ export default function TestimonialsSlider() {
                 <Slider {...settings}>
                     {testimonials.map((item, index) => (
                         <div key={index} className="px-2 sm:px-4">
-                            <p className="mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
+                            <p className="mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
                                 {item.text}
                             </p>
-                            <h3 className="font-semibold text-base sm:text-lg">{item.author}</h3>
-                            <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">{item.role}</p>
+                            <h3 className="font-semibold text-sm sm:text-base md:text-lg">
+                                {item.author}
+                            </h3>
+                            <p className="text-gray-400 text-xs sm:text-sm md:text-base mb-2 sm:mb-3 md:mb-4">
+                                {item.role}
+                            </p>
                             <div className="flex justify-center">
                                 <img
                                     src={item.img}
                                     alt={item.author}
-                                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-orange-400"
+                                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full object-cover border-2 border-orange-400"
                                 />
                             </div>
                         </div>
@@ -78,5 +92,6 @@ export default function TestimonialsSlider() {
                 </Slider>
             </div>
         </section>
+
     );
 }
