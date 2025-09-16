@@ -31,7 +31,7 @@ export default function TestimonialsSlider() {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         autoplay: true,
         autoplaySpeed: 2000
     };
