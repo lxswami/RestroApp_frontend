@@ -70,8 +70,8 @@ export default function TestimonialsSlider() {
             >
                 <Slider {...settings}>
                     {testimonials.map((item, index) => (
-                        <div key={index} className="px-2 sm:px-4">
-                            <p className="mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
+                        <div key={index} className="sm:px-4">
+                            <p className="mb-3 sm:mb-4 md:mb-6 text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed">
                                 {item.text}
                             </p>
                             <h3 className="font-semibold text-sm sm:text-base md:text-lg">
