@@ -60,7 +60,7 @@ export default function Footer() {
                             href="mailto:swamilaxman@gmail.com"
                             className="hover:text-white"
                         >
-                            swamilaxman@gmail.com
+                            swamilxmn@gmail.com
                         </a>
                     </p>
                     <p className="text-gray-300">
