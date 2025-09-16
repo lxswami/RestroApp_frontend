@@ -64,7 +64,7 @@ export default function Header() {
             <Link
               to="/login"
               onClick={() => setIsOpen(false)}
-              className="px-3 py-1 border rounded-md border-gray-600 hover:bg-gray-800 text-green-500 hover:border-green-600 font-bold transition cursor-pointer"
+              className="px-3 py-1 text-center border rounded-md border-gray-600 hover:bg-gray-800 text-green-500 hover:border-green-600 font-bold transition cursor-pointer"
             >
               Login
             </Link>
