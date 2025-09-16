@@ -118,7 +118,7 @@ export default function RecipeCardsSection({ activeTab }) {
                       <>
                         <Link
                           to={`/receipeedit/${item.id || item._id}`}
-                          className="flex-1 bg-yellow-600 hover:bg-yellow-700 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+                          className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
                         >
                           Edit
                         </Link>
