@@ -111,7 +111,7 @@ export default function RecipeCardsSection({ activeTab }) {
                   <div className="mt-4 flex gap-2">
                     {/* ✅ Show Add to Cart if recipes exist, else Edit/Delete */}
                     {filteredRecipes.length > 0 ? (
-                      <button className="flex-1 bg-green-600 hover:bg-green-700 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+                      <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-sm py-2 px-3 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
                         Add to Cart
                       </button>
                     ) : (
